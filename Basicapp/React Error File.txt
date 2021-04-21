@@ -1,0 +1,14 @@
+>>>>>>>>>>>>>>>>>>>>>......React Js ERROR File..........?????????
+
+1)***Adjacent Error*** JSX elements must be wrapped in an enclosing tag. 
+Did you want a JSX fragment <>...</>{
+"message": "JSX expressions must have one parent element.",
+	}
+Ans.. When you return 2 tag without using fregments...because App.js
+ does not return two element at same time {React.create element}
+
+ 2)JSX main  3 rules's?
+ sol. 1>Everytag has closing tag
+      2>class name is reserved in js so we use className
+	  3>and all tag are enclosed in single parent tag
+ 
