@@ -1,0 +1,16 @@
+if(window.XMLHttpRequest){
+var xmlHttpReuest=new window.XMLHttpRequest();
+console.log(XMLHttpRequest);
+}
+
+var xmlhttpRequest=new window.XMLHttpRequest();
+
+xmlhttpRequest.onreadystatechange=function(){
+console.log(xmlhttpRequest.readyState,xmlhttpRequest.responseText);
+}
+
+xmlhttpRequest.open('GET','https://cricapi.com/api/matches?apikey=bVjoSehYeqXaCjwC0Z0dzuuai4g1','true');
+
+xmlhttpRequest.send(null);
+
+
