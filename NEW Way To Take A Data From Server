@@ -1,0 +1,13 @@
+var xmlhttpRequest=new window.XMLHttpRequest();
+
+xmlhttpRequest.onreadystatechange=function(){
+if(xmlhttpRequest.readyState==4 &&
+xmlhttpRequest.status==200){
+console.log("Data Is",xmlhttpRequest.responseText);
+}}
+
+xmlhttpRequest.open('GET','https://cricapi.com/api/matches?apikey=bVjoSehYeqXaCjwC0Z0dzuuai4g1','true');
+
+xmlhttpRequest.send(null);
+
+
