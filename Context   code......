@@ -1,0 +1,51 @@
+SHOPAPP-9th vedio
+##########################utils/context
+import React from'react';
+const commonContext=React.createContext({total:0,updateTotal:function(){}});  //Jo common chiha ha vo ligh do
+export default commonContext;
+
+##################GO TO ROOT NODE App.js
+const App=(props)=>{
+let total=0;
+const updateTotal=(val)=>{
+console.log("Value ",val);
+total +=val;
+console.log("Total Item In Cart",total)
+}
+const shareObject={total:total,updateTotal:updateTotal}    //make a common object to pass
+  
+  return(
+    <div className='container'>
+   <commonContext.Provider  value={shareObject}>  // provide jo data dega   value>>> jo pass karna ho
+   <SearchPage />   //rapp  a component in it because search page not do all things
+    </commonContext.Provider>
+    
+    
+    ######################TotalItem in cart
+    <commonContext.Consumer>   /// jo data laga bo consumer
+    {
+        (shareObject)=>{
+            return(
+                <p class="h2" style={style}> <span class="glyphicon glyphicon-shopping-cart" >Total Item In Cart:{shareObject.total}</span></p> 
+            )
+        }
+    }
+</commonContext.Consumer>
+
+################## AddToCart
+ <commonContext.Consumer>     /// jo data laga bo consumer
+     {
+         (shareObject)=>{
+             return(
+                <button class="btn btn-success" type="button" onClick={()=>{   
+                    toggleCart();
+                    shareObject.updateTotal(!cartValue?1:-1);
+                }}>{cartValue?'Remove From Cart':'ADD TO CART'}
+                </button>                
+             )
+
+         }
+     }
+ </commonContext.Consumer>
+
+    
